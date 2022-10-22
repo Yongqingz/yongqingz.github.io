@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 Layout Sample</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Define the style of header */
+header {
+  background-color: #ffb84e;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: black;
+}
+
+/* Create two columns that floats next to each other */
+/* i.e. 30% vs 70% */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* fix height for sample */
+  background: #fffccb;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* This is another column */
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #fcffeb;
+  height: 300px; /* fix height for sample */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Define the style of footer */
+footer {
+  background-color: #ffb84e;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+/* Responsive layout - makes the two columnsstack on top of each other instead of side by side when viewing on mobile */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* min-width example*/
+@media (min-width: 600px) {
+  header, footer {
+    background-color: rgb(36, 116, 220);
+	color: white;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<header>
+  <h2>Departments</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#">HR</a></li>
+      <li><a href="#">IT</a></li>
+      <li><a href="#">Finance</a></li>
+	  <li><a href="#">Sales</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>HR</h1>
+    <p>In simplest terms, the HR (Human Resources) department is a group who is responsible for managing the employee life cycle (i.e., recruiting, hiring, onboarding, training, and firing employees) and administering employee benefits.</p>
+    <p>HR needs to understand the organization’s needs and make sure those needs are met when recruiting for new positions. It’s not as simple as just throwing an ad up on Indeed: you’ll need to analyze the market, consult stakeholders, and manage budgets. </p>
+  </article>
+</section>
+
+<footer>
+  <p>ABC Company</p>
+</footer>
+
+</body>
+</html>
+
